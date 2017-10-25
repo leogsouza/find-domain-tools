@@ -11,11 +11,13 @@ import (
 	"unicode"
 )
 
-var tlds = []string{"com", "net"}
-
 const allowedChars = "abcdefghijklmnopqrstuvwxyz01234567890_-"
 
 func main() {
+	var tldsFlag = flag.String("tlds", "com,net", "The tlds for domainify")
+	flag.Parse()
+	var tlds = strings.Split(*tldsFlag, ",")
+
 	rand.Seed(time.Now().UTC().UnixNano())
 	s := bufio.NewScanner(os.Stdin)
 
