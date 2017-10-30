@@ -32,7 +32,7 @@ func (b *BigHugh) Synonyms(term string) ([]string, error) {
 	}
 
 	syns = append(syns, data.Noun.Syn...)
-	syns - append(syns, data.Verb.Syn...)
+	syns = append(syns, data.Verb.Syn...)
 
 	return syns, nil
 }
